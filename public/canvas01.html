@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mycanvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="800" height="600"></canvas>
+
+    <script>
+        const ctx = document.querySelector('#mycanvas').getContext('2d');
+        // console.log(ctx);
+
+        ctx.beginPath();
+        ctx.moveTo(50, 50);
+        ctx.lineTo(250, 50);
+        ctx.moveTo(150, 10);
+        ctx.lineTo(150, 100);
+        ctx.moveTo(50, 100);
+        ctx.lineTo(250, 100);
+        ctx.lineTo(250, 150);
+        ctx.lineTo(50, 150);
+        ctx.lineTo(50, 90);
+        ctx.lineTo(50, 200);
+        ctx.lineTo(250, 200);
+        ctx.lineTo(250, 90);
+        ctx.moveTo(150, 200);
+        ctx.lineTo(150, 400);
+        ctx.moveTo(50, 300);
+        ctx.lineTo(250, 300);
+        ctx.moveTo(300, 50);
+        ctx.lineTo(450, 10);
+        ctx.lineTo(600, 50);
+        ctx.moveTo(300, 100);
+        ctx.lineTo(600, 100);
+        ctx.moveTo(300, 200);
+        ctx.lineTo(600, 200);
+        ctx.moveTo(450, 100);
+        ctx.lineTo(450, 400);
+
+
+        ctx.shadowOffsetX = 10;
+        ctx.shadowOffsetY = 10;
+        ctx.shadowColor = 'rgba(0,0,0,.5)';
+        ctx.shadowBlur = 4; // 模糊效果
+
+        ctx.strokeStyle = '#CCCCCC';
+        ctx.lineWidth = 20;
+        ctx.stroke();
+    </script>
+</body>
+
+</html>
