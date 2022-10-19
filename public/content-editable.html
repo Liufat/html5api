@@ -13,8 +13,24 @@
     </div>
 
     <script>
+        const prevData = localStorage.getItem('mycontent');
+
+        //處理錯誤(ex手動把localstorage改成非JSON格式)
+        let obj = {content:''};
+        try{
+            obj = JSON.parse(prevData)
+        } catch (ex){}
+
+        info.innerText = obj.content
+
+
         info.addEventListener('input',(event)=>{
-            console.log(info.innerText);
+            const data = {
+                time: Date.now(),
+                content: info.innerText
+            }
+            localStorage.setItem('mycontent',JSON.stringify(data));
+            // console.log(info.innerText);
         })
     </script>
 </body>
