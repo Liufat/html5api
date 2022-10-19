@@ -18,10 +18,10 @@
         //處理錯誤(ex手動把localstorage改成非JSON格式)
         let obj = {content:''};
         try{
-            obj = JSON.parse(prevData)
+            obj = JSON.parse(prevData) || obj;
         } catch (ex){}
 
-        info.innerText = obj.content
+        info.innerText = obj.content;
 
 
         info.addEventListener('input',(event)=>{
